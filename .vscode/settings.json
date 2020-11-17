@@ -1,0 +1,19 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "python.pythonPath": "/home/home/anaconda3/bin/python",
+    "files.exclude": {
+        // "fuzz_test": true,
+        // "docs": true,
+        // "scripts": true,
+        "README.md": true,
+        "LICENSE": true,
+        ".gitignore": true,
+        // ".cache": true,
+        // ".github": true,
+        // ".clang-format": true,
+        // ".clang-tidy": true,
+        // ".clang-format.yaml": true,
+        // "*.srctrl*": true,
+    },
+    "editor.formatOnSave": true,
+}
