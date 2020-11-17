@@ -13,10 +13,11 @@ $(error The environment variable CPPUTEST_HOME is not set. \
 Set it to where cpputest is installed)
 endif
 
-SRC_FILES += src/Example.cpp
-SRC_DIRS += platform
+# SRC_FILES += src/Example.cpp
+SRC_FILES += src/devices/MotorController.cpp
 
-TEST_SRC_FILES +=
+TEST_SRC_FILES += tests/devices/MotorController.cpp
+
 TEST_SRC_DIRS += tests
 TEST_SRC_DIRS += tests/devices
 
@@ -45,16 +46,13 @@ CPPUTEST_LIB_DIR = build/lib
 # commented out example specifies math library
 #LD_LIBRARIES += -lm
 
+include targets.mk
+
 include CppUTestCompileFlags.mk
 include $(CPPUTEST_HOME)/build/MakefileWorker.mk
 
 # --- TEST ---
-.PHONY: test
-
 test: cpputest/lib/libCppUTest.a
 
 cpputest/lib/libCppUTest.a:
 	cd cpputest; autoreconf . -i && ./configure && make tdd
-
-# ---
-all: test
