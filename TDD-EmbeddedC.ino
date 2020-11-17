@@ -1,19 +1,21 @@
-
-/*
-  Blink
-  Turns on an LED on for one second, then off for one second, repeatedly.
-  This example code is in the public domain.
- */
+#include "AccelerometerController.h"
+#include "CommandInterpretter.h"
+#include "DisplayController.h"
+#include "SerialController.h"
+#include "SliderController.h"
+#include "StateManagement.h"
+#include "base.h"
 
 void setup() {
-  // initialize the digital pin as an output.
-  // Pin 13 has an LED connected on most Arduino boards:
-  pinMode(13, OUTPUT);
+  SerialController();        // Initialize Serial Communication
+  SliderController();        // Initialize Slider
+  AccelerometerController(); // Initialize Accelerometer
+  DisplayController();       // Initialize Display
+  DistanceController();      // Initialize DistanceController
+  show_debug_screen();       // debug screen should be called LAST
 }
 
 void loop() {
-  digitalWrite(13, HIGH); // set the LED on
-  delay(1000);            // wait for a second
-  digitalWrite(13, LOW);  // set the LED off
-  delay(1000);            // wait for a second
+  HandleIncommingCommands();
+  ActAccordingToState(State::instrumentState);
 }

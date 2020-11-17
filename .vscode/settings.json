@@ -1,5 +1,5 @@
 {
-    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.default.configurationController": "ms-vscode.cmake-tools",
     "python.pythonPath": "/home/home/anaconda3/bin/python",
     "files.exclude": {
         "README.md": true,
