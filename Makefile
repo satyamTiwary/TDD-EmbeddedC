@@ -1,6 +1,6 @@
 # https://github.com/jwgrenning/cpputest-starter-project/blob/master/makefile
 #Set this to @ to keep the makefile quiet
-# SILENCE = @
+SILENCE = @
 
 #---- Outputs ----#
 COMPONENT_NAME = tdd
@@ -33,9 +33,8 @@ CPPUTEST_USE_EXTENSIONS = Y
 INCLUDE_DIRS += $(CPPUTEST_HOME)/include
 INCLUDE_DIRS += $(CPPUTEST_HOME)/include/Platforms/Gcc
 INCLUDE_DIRS += include
-# INCLUDE_DIRS += example-fff
+INCLUDE_DIRS += include/devices
 # INCLUDE_DIRS += tests/exploding-fakes
-
 
 # --- CPPUTEST_OBJS_DIR ---
 CPPUTEST_OBJS_DIR = build/obj
@@ -48,3 +47,14 @@ CPPUTEST_LIB_DIR = build/lib
 
 include CppUTestCompileFlags.mk
 include $(CPPUTEST_HOME)/build/MakefileWorker.mk
+
+# --- TEST ---
+.PHONY: test
+
+test: cpputest/lib/libCppUTest.a
+
+cpputest/lib/libCppUTest.a:
+	cd cpputest; autoreconf . -i && ./configure && make tdd
+
+# ---
+all: test
