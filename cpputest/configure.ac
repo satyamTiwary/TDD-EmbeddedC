@@ -31,6 +31,8 @@ AC_PROG_MAKE_SET
 AM_PROG_CC_C_O
 AM_SILENT_RULES
 
+AC_PROG_RANLIB
+
 ACX_PTHREAD([LIBS="$PTHREAD_LIBS $LIBS"])
 
 # This additional -lpthread was added due to a bug on gcc for MacOSX: http://gcc.gnu.org/bugzilla/show_bug.cgi?id=42159
