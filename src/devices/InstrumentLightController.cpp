@@ -1,5 +1,4 @@
-#pragma once
-#include "base.h"
+#include "InstrumentLightController.h"
 
 constexpr uint8_t pin = static_cast<uint8_t>(PIN::DO_INSTRUMENTLIGHTS);
 

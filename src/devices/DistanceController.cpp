@@ -1,6 +1,4 @@
-#pragma once
-#include "base.h"
-#include <Encoder.h>
+#include "DistanceController.h"
 
 // Implementation Details
 int16_t _old_micron = 0;

@@ -14,9 +14,9 @@ Set it to where cpputest is installed)
 endif
 
 # SRC_FILES += src/Example.cpp
-SRC_FILES += src/devices/MotorController.cpp
+# SRC_FILES += src/devices/InstrumentLightController.cpp
 
-TEST_SRC_FILES += tests/devices/MotorController.cpp
+TEST_SRC_FILES += tests/devices/InstrumentLightController.cpp
 
 TEST_SRC_DIRS += tests
 TEST_SRC_DIRS += tests/devices
